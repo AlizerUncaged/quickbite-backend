@@ -1,4 +1,5 @@
 
+// models/Food.js
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 
@@ -48,6 +49,5 @@ const Food = sequelize.define('Food', {
         timestamps: true,
         tableName: 'foods'
 });
-module.exports = {
-        Food,
-};
+
+module.exports = Food;

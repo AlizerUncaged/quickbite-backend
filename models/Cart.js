@@ -1,4 +1,8 @@
 
+// models/Cart.js
+const { DataTypes } = require('sequelize');
+const sequelize = require('../config/database');
+
 const Cart = sequelize.define('Cart', {
         id: {
                 type: DataTypes.INTEGER,
@@ -53,6 +57,4 @@ const Cart = sequelize.define('Cart', {
         tableName: 'carts'
 });
 
-module.exports = {
-        Cart,
-};
+module.exports = Cart;

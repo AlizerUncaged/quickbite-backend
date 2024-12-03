@@ -1,4 +1,8 @@
 
+// models/CartItem.js
+const { DataTypes } = require('sequelize');
+const sequelize = require('../config/database');
+
 const CartItem = sequelize.define('CartItem', {
         id: {
                 type: DataTypes.INTEGER,
@@ -34,24 +38,4 @@ const CartItem = sequelize.define('CartItem', {
         tableName: 'cart_items'
 });
 
-// Define relationships
-Cart.hasMany(CartItem, {
-        foreignKey: 'cartId',
-        onDelete: 'CASCADE'
-});
-
-CartItem.belongsTo(Cart, {
-        foreignKey: 'cartId'
-});
-
-CartItem.belongsTo(Food, {
-        foreignKey: 'foodId'
-});
-
-Food.hasMany(CartItem, {
-        foreignKey: 'foodId'
-});
-
-module.exports = {
-        CartItem
-};
+module.exports = CartItem;
