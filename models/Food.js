@@ -1,4 +1,3 @@
-
 // models/Food.js
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
@@ -39,6 +38,14 @@ const Food = sequelize.define('Food', {
                 validate: {
                         min: 0,
                         max: 5
+                }
+        },
+        quantity: {
+                type: DataTypes.INTEGER,
+                allowNull: false,
+                defaultValue: 10,
+                validate: {
+                        min: 0
                 }
         },
         isAvailable: {
